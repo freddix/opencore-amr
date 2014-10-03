@@ -1,7 +1,7 @@
 Summary:	OpenCORE Framework implementation of Adaptive Multi Rate Narrowband and Wideband speech codec
 Name:		opencore-amr
 Version:	0.1.3
-Release:	1
+Release:	2
 License:	Apache v2.0
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/opencore-amr/%{name}-%{version}.tar.gz
@@ -39,6 +39,7 @@ Header files for opencore-amr library.
 %{__autoheader}
 %{__automake}
 %configure \
+	--disable-silent-rules	\
 	--disable-static
 %{__make}
 
@@ -47,6 +48,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -63,7 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libopencore-*.so
-%{_libdir}/libopencore-*.la
 %{_includedir}/opencore-*
 %{_pkgconfigdir}/opencore-*.pc
 
