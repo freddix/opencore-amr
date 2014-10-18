@@ -1,7 +1,7 @@
 Summary:	OpenCORE Framework implementation of Adaptive Multi Rate Narrowband and Wideband speech codec
 Name:		opencore-amr
 Version:	0.1.3
-Release:	2
+Release:	4
 License:	Apache v2.0
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/opencore-amr/%{name}-%{version}.tar.gz
